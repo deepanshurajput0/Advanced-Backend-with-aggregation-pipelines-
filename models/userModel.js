@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const todoSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
    userName:{
     type:String,
     required:true,
@@ -9,7 +9,17 @@ const todoSchema = new mongoose.Schema({
    email:{
     type:String,
     required:true,
-    unique
+    unique:true
+   },
+   profilePic:{
+    publicId:{
+        type:String,
+        required:true
+    },
+    url:{
+        type:String,
+        required:true
+    }
    },
    password:{
     type:String,
@@ -26,4 +36,4 @@ const todoSchema = new mongoose.Schema({
 })
 
 
-const userModel = mongoose.model('Todos',todoSchema)
+const userModel = mongoose.model('User',userSchema)
